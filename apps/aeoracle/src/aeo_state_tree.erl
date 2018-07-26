@@ -337,7 +337,7 @@ find_oracle_queries(Iterator, QueryType, N, Acc) when N > 0 ->
             end;
         %% Either end_of_table or next Oracle
         _Other ->
-            Acc
+            lists:reverse(Acc)
     end;
 find_oracle_queries(_Iterator, _QueryType, 0, Acc) ->
     lists:reverse(Acc).
